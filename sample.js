@@ -244,16 +244,332 @@
 
 ////////////////////////////
 
-let person1 = {name: 'bob'};
-person1.name = 'sam';
-console.log(person1);
-const per = {na:'re'};
-per.na ='vin';
-per.na="pin";
-console.log(per);
+// let person1 = {name: 'bob'};
+// person1.name = 'sam';
+// console.log(person1);
+// const per = {na:'re'};
+// per.na ='vin';
+// per.na="pin";
+// console.log(per);
 // let person1 = {name:'kri'};
 // person1.name ='emma';
 // console.log(person1.name);
+
+
+////////////////////////////////////////
+// functions declaration
+// function sayHi() {
+// console.log("hello");
+// }
+// sayHi();
+
+// //function expression
+// const hello = function name(){
+//     console.log("welcome");
+// }
+// hello();
+// console.log(hello);
+// console.log(hello());
+
+// //arrow function
+// const name = () => {
+//     console.log("arrow function")
+// }
+
+// name();
+// console.log(name());
+
+// const na = () => console.log("hello");
+// na();
+
+// const doub = value => value * 2;
+// console.log(doub(2));
+
+//return obj
+// const obj = () => ({name:"emm",age:34});
+// const person = obj();
+// console.log(person);//{name: 'emm', age: 34}
+// console.log(obj);//arrow func () => ({name:"emm",age:34})
+
+//arrow function as call back fucntion
+// const numbers = [1,2,3,4,5,6];
+// const big = numbers.filter(number => number > 1);
+// console.log(big); //(5) [2, 3, 4, 5, 6]
+// const small = numbers.filter(number => number < 6);
+// console.log(small);//(5) [1, 2, 3, 4, 5]
+// const div = numbers. filter(number => number % 2);
+// console.log(div);//(3) [1, 3, 5]
+// const mul =numbers. filter(number => number * 2);
+// console.log(mul);//(6) [1, 2, 3, 4, 5, 6]
+
+// One parameter
+// const hello = function (name) {
+//     console.log (`Hello ${name}`);
+// };
+
+// hello("tony"); //one param
+
+// const hello = function(name) {
+//      console.log(`Hello ${name}`);
+//     };
+//      hello("emma");
+
+//two parameters
+// const hel = function (name, age) {
+//     console.log(`Person details ${name} ${age}`)
+// }
+
+// hel();//Person details undefined undefined
+// hel("kroner",45);//Person details kroner 45
+// console.log(hel("peter", 34));
+
+//3 parameters
+// let threeParams = function (firstName, lastName, age, placeOfBirth, country) {
+//     console.log(`my full details ${firstName} ${lastName} ${age} ${placeOfBirth} ${country}`);
+// }
+
+// threeParams();//my full details undefined undefined
+// threeParams("Tony","Poo", 34, "Somewhere", "Earth");//my full details Tony Poo 34 Somewhere Earth
+// console.log()
+
+//return for calculation when we want to return something
+// function cal(x,y) {
+//     return x * y;
+// }
+// console.log(cal(3,4));
+
+// let name = function(x,y) {
+//     // return x + y;
+//     console.log("total of x,y")
+//     return x+y
+// }
+// name();
+// console.log(name(3,5));
+//total of x,y
+//8
+
+///////////////////////
+//Arrow function this keyword
+// const emma = {
+//     firstName:"emma",
+//     lastName:"tum",
+//     sayName: function () {
+//        console.log(this);
+//         setTimeout(()=> {
+//             console.log(this);
+//             console.log(`hello, my name ${this.firstName} ${this.lastName}`);
+//             console.log("welcome")
+//         }, 1000);
+//         },
+//     }
+
+
+// console.log(emma);//{firstName: 'emma', lastName: 'tum', sayName: ƒ}
+// console.log(emma.sayName);//ƒ () { console.log(this); }
+// emma.sayName();
+
+//output
+// {firstName: 'emma', lastName: 'tum', sayName: ƒ}
+//{firstName: "emma"lastName: "tum"sayName: ƒ} 
+// sample.js:360 hello, my name emma tum
+// sample.js:361 welcome
+
+// const harry = {
+//   firstName:"har",
+//   lastName:"potter",
+//   sayName:() =>{
+//     console.log(this);
+//     console.log(`Hello, my name is ${this.firstName} ${this.lastName}`);
+//   },
+// };
+
+// // harry;//no output
+// // console.log(harry); //{firstName: 'har', lastName: 'potter', sayName: ƒ}
+// harry.sayName();// Hello, my name is undefined undefined
+// console.log(harry.firstName);
+// console.log(harry.lastName);
+
+/////////////////////////////////
+// default parameters, arrow function gotchas, defualt parameter hositing
+
+// const emma = 'emma';
+// const harry = 'harry';
+
+// function sayHi(person = 'Susan') {
+//   console.log(`Hi ${person}`);
+// }
+// const sayHello = (person = 'EMMA') => console.log(`Hello ${person}`);
+
+// sayHi();//hi susan
+// sayHello();//hello emma
+// sayHi(emma);//Hi emma
+// sayHello(harry);//Hello harry
+
+/////////////////////////////////////
+//array destructuring
+//Destructuring
+// faster/easier way to access/unpack values from arrays
+// objects into variables
+// Arrays
+
+const fruits = ['orange', 'banana', 'lemon'];
+const friends = ['emma', 'watson', 'harry', 'daniel', 'venne'];
+
+console.log(fruits);
+console.log(friends);
+
+const [emma,watson,harry,daniel,venne] =friends;
+console.log(emma);//emma
+console.log(harry);//harry
+console.log(Venee); //Venee is not defined
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// //////
+// // adding queryselector event listener
+// const btn = document.querySelector(".btn");
+// btn.addEventListener("click", () =>console.log("hi"));
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
