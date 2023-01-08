@@ -412,16 +412,451 @@
 // objects into variables
 // Arrays
 
-const fruits = ['orange', 'banana', 'lemon'];
-const friends = ['emma', 'watson', 'harry', 'daniel', 'venne'];
+// const fruits = ['orange', 'banana', 'lemon'];
+// const friends = ['emma', 'watson', 'harry', 'daniel', 'venne'];
 
-console.log(fruits);
-console.log(friends);
+// console.log(fruits);
+// console.log(friends);
 
-const [emma,watson,harry,daniel,venne] =friends;
-console.log(emma);//emma
-console.log(harry);//harry
-console.log(Venee); //Venee is not defined
+// const [emma,watson,harry,daniel,venne] =friends;
+// console.log(emma);//emma
+// console.log(harry);//harry
+// console.log(Venee); //Venee is not defined
+
+// var thing = ["table","chair","tent"];
+// var[a,b,c]=thing;
+// console.log(a);//table
+// console.log(b);//chair
+// console.log(c);//tent
+// console.log(a,b,c);//table chair tent
+
+// Declaration and assignment can done seperately in array
+// var first, second;
+// [first,second]=["a","b"];
+// console.log(first); //a
+// console.log(second);//b
+
+//If given value is not in the array it will show undefined
+// let name =['a','b','c'];
+// console.log(name);
+// let [p,q,r,s]=name;
+// console.log(p);//a
+// console.log(s);//undefined
+
+//DESTRUcture return arrays
+// function runners () {
+//     return ['apple','ball','call'];
+// }
+// runners();// no output
+// console.log(runners());//(3) ['a', 'b', 'c']
+// var[p,q,r]=runners();
+// console.log(p);//apple
+// console.log(q);
+// console.log(r);
+
+// [a=40, b=20] =[1,3];
+// console.log(a);//1
+// console.log(b);//3
+
+// var [firstName="some", lastName="place"] = ["krish", "tony"];
+// console.log(firstName);
+// console.log(lastName);
+
+// var [firstNam="some", lastNam="place"] = [];
+// console.log(firstNam); //some
+// console.log(lastNam); //place
+
+// var[firstNa="generate",lastNa="pub"] =["","welcome"];
+// console.log(firstNa);//empty
+// console.log(lastNa);//welcome
+
+//ignoring values
+// var a, b;
+// [a, , b]= ['loea',"pem","qen"];
+// console.log(a); //loea
+// console.log(b);//qen
+// console.log(c);//c is not defined
+
+
+//The Rest Parameter And Spread Syntax used for destructurung
+// if ... on left side then rest parameter
+//rest parameter is used to map all the remaining elements in the array, that have not been mapped to the rest variable it self
+//it like gathering what is left behind, it must always be the last
+
+// var planets = ["Mercury", "Earth", "Venus", "Mars", "Pluto", "Saturn"];
+// var [first, ,third, ...others] = planets;
+// console.log(first); //mercury
+// console.log(others); //['Mars', 'Pluto', 'Saturn']
+
+// if ... appear on the right side then spread operator
+// It takes all the other elements in the array which have no variable mapped to them and then maps it to the rest variable
+// var places =["Mercury", "Earth", "Venus", "Mars", "Pluto", "Saturn"];
+// var some = ["names","sum", ...places];
+// console.log(some);
+
+//nested array destructuring
+// var numbers = [8,9,[1,2,3,4],4,5,53];
+// console.log(numbers);
+// //(5) [8, 9, Array(4), 4, 5]
+// var[a,b,[d,f,g],p]=numbers;
+// console.log(a);//8
+// console.log(d);//1
+// console.log(g);//3
+// console.log(p);//4
+
+//Multiple Array Destructuring
+// var places = ["first", "second", "third", "fourth"];
+// var [a,b, ,d] =[f, ...rest] =places;
+// console.log(a);//first
+// console.log(d);//fourth
+// console.log(f);//first
+
+/////////////////
+//swap variables
+// let first = 'emma';
+// let second = 'harry';
+
+// console.log(first, second); //emma harry
+
+// first = 'harrry'
+// second = 'emma';
+// console.log(first, second); //harry emma
+
+// let temp = second;
+//  second = first;
+// first = temp;
+// console.log(first,second);//emma harry
+// console.log(temp);//emma
+
+// const newArr = [first, second];
+// console.log(newArr);//['emma','harry']
+
+// let [one, two] = newArr;
+// console.log(one, two);//emma harry
+//  [second, first] = [first, second];
+// console.log(first, second);//harry emma
+
+//////////////////////////////
+//object destrucutring
+// const emma ={
+//     first: 'emma',
+//     last: 'sanders',
+//     city:'chicago',
+//     siblings: {
+//         sister:'jane',
+//         father:"zenrs",
+//     },
+// };
+
+// const {first, last, city,sibilings} =emma;
+// console.log(first, last, city);//emma sanders chicago
+// console.log(emma.siblings);//{sister: 'jane', father: 'zenrs'}
+// console.log(emma.siblings.sister);//jane
+// console.log(emma.siblings.father);//zenrs
+
+// const emma = {
+//     first: 'emma',
+//     last: 'watson',
+//     city: 'london',
+//     siblings: {
+//       sister: 'hermoine',
+//     },
+//   };
+
+//   function printPerson({first,last,city}) {
+//     console.log(first,last,city);
+//   }
+// printPerson(emma); //emma watson london
+// printPerson(name);//undefined
+
+// new string methods
+// startsWith(), endsWith(), includes(),repeat()
+
+// const person = 'Emma Watson';
+// const employee = '23456-EMP-EMMA-SMITH';
+// const manager = '23456-MAN-HARRY-DOE';
+// // starts width
+// console.log(person.startsWith('Emm'));//true
+// console.log(person.startsWith('emma'));//true
+
+// // ends width
+// console.log(employee.startsWith('EMP', 6)); //true
+// console.log(manager.endsWith('DOE'));//true
+// console.log(manager.endsWith('MAN', 9));//TRUE
+// // includes
+// console.log(manager.includes('MAN'));//TRUE
+// console.log(manager.includes('mAN'));//FLASE
+
+// const multiplyPeople = (person, amount) => person.repeat(amount);
+
+// // repeat
+// const people = multiplyPeople(person, 10);
+// console.log(people);
+// Emma WatsonEmma WatsonEmma WatsonEmma WatsonEmma WatsonEmma WatsonEmma WatsonEmma WatsonEmma WatsonEmma Watson
+///////////////////////////////////////////////////////
+//for of loops- loops through values of an iterable obj
+// String, Array,Map,Set etc  - NOT OBJECT
+
+// const fruits = ['apple', 'orange', 'banana', 'peach'];
+// const longName = 'Emma watson harry potter';
+// let shortName = '';
+
+// for (const letter of longName) {
+//     if(letter === ' ') {
+//         continue;
+//     }else{
+//         shortName += letter;
+//     }
+//     }
+// console.log(shortName);
+
+// for (const fruit of fruits) {
+//     if (fruit === 'banana') {
+//       // break;
+//       continue;
+//     }
+//     console.log(fruit);
+//   }
+
+////////////////////
+//spread operator
+// Allows an iterable to spread/expand individually inside reciever
+// Split into single items and copy them.
+
+// const udemy = 'udemy';
+// const letters = [...udemy];
+// console.log(letters);//(5) ['u', 'd', 'e', 'm', 'y']
+
+// const boys = ['srikanth', 'daniel', 'harry'];
+// const girls = ['emma', 'watson'];
+// const bestFriend = 'hermoine';
+
+// const friends = [...boys, bestFriend, girls];
+// console.log(friends);
+// (5) ['srikanth', 'daniel', 'harry', 'hermoine', Array(2)]
+
+// const person = {
+//     name:'emma',
+//     job:'actor'
+// };
+// const newPerson = {
+//     ...person,
+//     city:'some',
+//     place:'que',
+// };
+// console.log(person);//{name: 'emma', job: 'actor'}
+// console.log(newPerson);//{name: 'emma', job: 'actor', city: 'some', place: 'que'}
+
+// const headings = document.querySelectorAll('h1');
+// const result = document.getElementById('result');
+// const text = [...headings]
+//   .map(item => `<span>${item.textContent}</span>`)
+//   .join('');
+// console.log(text);
+
+// result.innerHTML = text;
+
+// const numbers = [23,45,34,2,343,434];
+// console.log(Math.max(...numbers));//434
+// console.log(Math.min(...numbers));//2
+
+// const emma = ['emma', 'watson'];
+// const sayHello =(name, lastName) => {
+//     console.log(`hello ${name} ${lastName}`);
+// }
+// sayHello(emma);//hello emma,watson undefined
+// sayHello(...emma);//hello emma watson
+
+//rest operator
+//gathers/collects the items
+
+//arrays
+// const fruit = ['apple', 'orange', 'lemon', 'banana', 'pear'];
+// const [first, second, ...fruits] = fruit;
+// console.log(first);//apple
+// console.log(second);//orange
+// console.log(fruits);//(3) ['lemon', 'banana', 'pear']
+
+// Array.from and Array.of - NOT ON THE PROTOTYPE
+// Array.from
+// Array.of
+// of creates a new Array instance from a variable number of arguments.
+
+// const example = ['one', 'two', 'three'];
+// console.log(example);//(3) ['one', 'two', 'three']
+// console.log(example.map);
+// console.log(example.from);
+// console.log(example.of);
+
+// const friends = Array.of('emma', 2, true);
+// console.log(friends);
+
+
+/////////////////////////////////
+
+
+// Array.from and Array.of - NOT ON THE PROTOTYPE
+
+// from - returns Array Object from any object with a length property or an iterable object
+// from turns array-like/ish into array - string,nodeList,Set
+
+const youtube = 'youtube';
+console.log(Array.from(youtube));
+// ['y', 'o', 'u', 't', 'u', 'b', 'e']
+
+
+function countTotal() {
+    // console.log(arguments);
+    let total = Array.from(arguments).reduce(
+      (total, currNum) => (total += currNum),
+      0
+    );
+    console.log(total);
+  }
+  
+  countTotal(67, 89, 54, 100);
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
